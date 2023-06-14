@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  web:
+    container_name: streaming-service
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./data/:/data
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "postgres", "-U", "postgres"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+volumes:
+  postgres_data:

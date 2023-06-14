@@ -1,0 +1,18 @@
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard with Flexmonster</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="{% static 'gallery/js/videoCard.js' %}"></script>
+  <script src="{% static 'gallery/js/main.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'gallery/css/reset.css' %}" />
+  <link rel="stylesheet" href="{% static 'gallery/css/styles.css' %}" />
+</head>
+<body>
+  <nav>
+    <h1 class="nav--title">Streaming Gallery</h1>
+  </nav>
+  <main>
+    <section class="video-list"></section>
+  </main>
+</body>
