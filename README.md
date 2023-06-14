@@ -25,3 +25,8 @@
 > pip install -r requirements
 > ./go.sh
 ```
+
+This should start a server which is accessible at [http://localhost:8000](http://localhost:8000):
+
+
+![image](https://github.com/hunterprice04/streaming-server-example/assets/55900647/2de1f898-fa76-4ad9-8422-241cab52e492)
